@@ -3,17 +3,17 @@ import { getProducts } from "../API";
 import cartContext from "./cartContext";
 
 export default function Products({ token, navigate }) {
-  const [productsList, setProductsList] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState([]);
   const [filter, setFilter] = useState("");
   const [sorting, setSorting] = useState({ field: "title", ascending: true });
-  const { cart } = useContext(cartContext);
+  const { cart, productsList, setProductsList } = useContext(cartContext);
 
   function addToCart(productId) {
     if (cart.includes(productId)) {
       let index = cart.indexOf(productId);
       let y = cart.splice(index, 1);
       console.log(cart);
+      localStorage.setItem("cart", cart)
       alert("Removed from cart!");
       let x = document.getElementsByClassName(productId);
       for (var i = 0; i < x.length; i++) {
@@ -22,6 +22,7 @@ export default function Products({ token, navigate }) {
     } else {
       cart.push(productId);
       console.log(cart);
+      localStorage.setItem("cart", cart)
       alert("Added to cart!");
       let x = document.getElementsByClassName(productId);
       for (var i = 0; i < x.length; i++) {
@@ -56,6 +57,7 @@ export default function Products({ token, navigate }) {
 
   useEffect(() => {
     getProducts(setProductsList);
+    localStorage.setItem("cart", cart)
   }, []);
 
   useEffect(() => {
@@ -148,7 +150,7 @@ export default function Products({ token, navigate }) {
                     >
                       <img src={product.image} />
                     </td>
-                    <td className="price">${product.price}</td>
+                    <td className="price">${product.price.toFixed(2)}</td>
                     <td>
                       {cart.includes(product.id) && (
                         <button

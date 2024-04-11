@@ -14,6 +14,7 @@ export default function SingleProduct({ token, navigate }) {
       let index = cart.indexOf(productId);
       let y = cart.splice(index, 1);
       console.log(cart);
+      localStorage.setItem("cart", cart)
       alert("Removed from cart!");
       let x = document.getElementsByClassName(productId);
       for (var i = 0; i < x.length; i++) {
@@ -22,6 +23,7 @@ export default function SingleProduct({ token, navigate }) {
     } else {
       cart.push(productId);
       console.log(cart);
+      localStorage.setItem("cart", cart)
       alert("Added to cart!");
       let x = document.getElementsByClassName(productId);
       for (var i = 0; i < x.length; i++) {
@@ -35,7 +37,7 @@ export default function SingleProduct({ token, navigate }) {
   }
 
   useEffect(() => {
-    getProduct(`${id}`, setProduct);
+    localStorage.setItem("cart", cart)
   }, []);
 
   return (

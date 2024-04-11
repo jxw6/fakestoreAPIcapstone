@@ -124,3 +124,17 @@ td.productImage{
 .searchBar {
   text-align: right;
 }
+
+.Subtotal {
+  text-align: right;
+}
+
+.checkout {
+  width: 7rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
