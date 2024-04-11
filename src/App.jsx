@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -7,11 +7,13 @@ import SingleProduct from "./components/SingleProduct";
 import cartLogo from "./assets/shopping_cart-512.webp"
 import Register from "./components/Register";
 import Login from "./components/Login";
+import cartContext from "./components/cartContext";
 import "./index.css";
 
 function App() {
   const [token, setToken] = useState(null);
   const navigate = useNavigate();
+  const {setCart} = useContext(cartContext);
 
   return (
     <>
