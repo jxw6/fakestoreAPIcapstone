@@ -31,6 +31,7 @@ export default function Cart({ token, navigate }) {
 
   return (
     <>
+        <h2>Your Cart:</h2>
       <table>
         <thead>
           <tr>
