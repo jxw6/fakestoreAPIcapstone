@@ -79,7 +79,7 @@ export default function Products({ token, navigate }) {
   return (
     <>
       <div className="searchBar">
-        Search:
+        Search by name or category: 
         <input
           className="productSearch"
           onChange={filterUpdate}

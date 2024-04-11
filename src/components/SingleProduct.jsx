@@ -37,7 +37,8 @@ export default function SingleProduct({ token, navigate }) {
   }
 
   useEffect(() => {
-    localStorage.setItem("cart", cart)
+    localStorage.setItem("cart", cart);
+    getProduct(`${id}`, setProduct);
   }, []);
 
   return (
