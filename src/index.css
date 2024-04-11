@@ -1,0 +1,126 @@
+body {
+  font-family: Georgia, serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-image {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 10px;
+  column-gap: 30px;
+}
+
+.main-section {
+  flex-grow: 1;
+}
+
+.main-section > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginForm {
+  justify-content: normal;
+  margin: 0 auto;
+  padding: 10px 0;
+  column-gap: 20px;
+}
+
+img {
+  max-width: 20%;
+}
+
+label {
+  display:block;
+}
+
+tr, th, td {
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: center;
+  width: 100vw;
+}
+
+td img{
+  max-height: 8rem;
+  max-width: 100%;
+}
+
+th.true {
+  cursor: pointer;
+}
+
+th.false {
+  cursor: pointer;
+}
+
+th.atrue {
+  cursor: pointer;
+}
+
+th.afalse {
+  cursor: pointer;
+}
+
+
+th.aundefined::after {
+ content:'⮁';
+ display: inline-block;
+ margin-left: 1em;
+ cursor: pointer;
+}
+
+th.atrue::after {
+  content: '▼';
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+th.afalse::after {
+  content: '▲';
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+td.price {
+  width: 7rem;
+}
+
+td button {
+  width: 7rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+td.productTitle{
+  width:60%;
+  max-width: 60%;
+  cursor: pointer;
+}
+
+tr.productRow {
+  max-height: 8rem;
+  min-height: 8rem;
+  height: 8rem;
+}
+
+td.productImage{
+  cursor: pointer;
+}
+
+.searchBar {
+  text-align: right;
+}
